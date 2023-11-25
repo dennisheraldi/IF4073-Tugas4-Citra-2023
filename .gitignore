@@ -2,3 +2,6 @@ dataset-vehicles
 training_image
 testing_image
 .DS_Store
+cores/pretrained-yolo-v4/models/License-YOLOv4-coco.txt
+cores/pretrained-yolo-v4/models/YOLOv4-coco.mat
+cores/pretrained-yolo-v4/models/YOLOv4-coco.zip
