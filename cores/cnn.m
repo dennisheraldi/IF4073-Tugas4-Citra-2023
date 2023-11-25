@@ -46,9 +46,6 @@ function label = cnn(img)
     end
     
     % Output kelas dengan skor tertinggi atau default
-    if max_class == "motorbike"
-        max_class = "bike";
-    end
     label = max_class;
 end
 
