@@ -22,7 +22,7 @@ function label = cnn(img)
     label_score = [string(labels) string(scores)];
     
     % Kelas valid
-    valid_classes = ["bus", "car", "truck"];
+    valid_classes = ["bus", "car", "truck", "motorbike"];
     
     % Filter untuk hanya kelas yang valid
     valid_scores = [];
@@ -46,6 +46,9 @@ function label = cnn(img)
     end
     
     % Output kelas dengan skor tertinggi atau default
+    if max_class == "motorbike"
+        max_class = "bike";
+    end
     label = max_class;
 end
 
