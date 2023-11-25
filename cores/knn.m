@@ -1,6 +1,9 @@
 function label = knn(img)
 % First, we need a function to extract features from the image
     function features = getFeatures(img)
+        if size(img, 3) ~= 3
+            img = repmat(im2uint8(img), [1, 1, 3]);  % Duplicate grayscale into 3 channels
+        end
         % convert to grayscale
         img_gray = rgb2gray(img);
         % resize to 64x64
@@ -88,6 +91,8 @@ if ~exist('train_matrix.mat', 'file') || ~exist('train_labels.mat', 'file')
                 label = 'bus';
             elseif contains(file_name, 'Truck')
                 label = 'truck';
+            elseif contains(file_name, 'Bike')
+                label = 'bike';
             else
                 label = '';
                 disp(file_name);
