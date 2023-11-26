@@ -22,7 +22,7 @@ function label = cnn(img)
     label_score = [string(labels) string(scores)];
     
     % Kelas valid
-    valid_classes = ["bus", "car", "truck", "motorbike"];
+    valid_classes = ["bus", "car", "truck"];
     
     % Filter untuk hanya kelas yang valid
     valid_scores = [];
