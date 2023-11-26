@@ -2,7 +2,7 @@
 
 Tugas 4 IF4073 Interpretasi dan Pengolahan Citra: Sistem Pengenalan Jenis Kendaraan
 
-Download dataset dari https://www.kaggle.com/datasets/rohan300557/vehicle-detection lalu ekstrak ke root menjadi folder `training_image`.
+Download dataset dari https://drive.google.com/drive/u/1/folders/1pM_1IiJeLE_JeogRWDE0E5WSc9jt7nN1 lalu ekstrak ke root menjadi folder `training_image`.
 
 Untuk menjalankan program, jalankan file `app1.mlapp` pada folder `ui` pada MATLAB
 
