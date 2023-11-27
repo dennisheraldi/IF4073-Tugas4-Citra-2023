@@ -1,5 +1,5 @@
 function label = knn(img)
-% First, we need a function to extract features from the image
+% First, we need a function to extract features (a vector representation) from the image
     function features = getFeatures(img)
         if size(img, 3) ~= 3
             img = repmat(im2uint8(img), [1, 1, 3]);  % Duplicate grayscale into 3 channels
@@ -61,12 +61,6 @@ dataset_path = 'training_image/';
 if ~exist('train_matrix.mat', 'file') || ~exist('train_labels.mat', 'file')
     train_matrix = [];
     train_labels = {};
-    % the dataset folder has two folders, images and labels
-    % in each, there are 3 folders, train, test and val
-    % inside the folders inside images are image files with the name <number>.png
-    % but also files with the naming img<number>.png and image<number>.png, which is weird
-    % need to read all files for train
-    % inside the folders inside labels are text files with the same weird naming
     % need to read all files and not just follow the naming
     % first, list all file names
     file_names = dir(dataset_path);
@@ -101,7 +95,7 @@ if ~exist('train_matrix.mat', 'file') || ~exist('train_labels.mat', 'file')
             % close files
             close all;
         end
-        clc;
+        clc; % clear console
     end
     
     save('train_matrix.mat', 'train_matrix');
