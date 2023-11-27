@@ -72,6 +72,7 @@ if ~exist('train_matrix.mat', 'file') || ~exist('train_labels.mat', 'file')
     file_names = dir(dataset_path);
     % iterate over all files
     for i = 1:length(file_names)
+        disp('Training KNN... (' + string(i) + '/' + string(length(file_names)) + ')')
         % get the file name
         file_name = file_names(i).name;
         % check if it is a valid file
@@ -91,8 +92,6 @@ if ~exist('train_matrix.mat', 'file') || ~exist('train_labels.mat', 'file')
                 label = 'bus';
             elseif contains(file_name, 'Truck')
                 label = 'truck';
-            elseif contains(file_name, 'Bike')
-                label = 'bike';
             else
                 label = '';
                 disp(file_name);
@@ -102,6 +101,7 @@ if ~exist('train_matrix.mat', 'file') || ~exist('train_labels.mat', 'file')
             % close files
             close all;
         end
+        clc;
     end
     
     save('train_matrix.mat', 'train_matrix');
